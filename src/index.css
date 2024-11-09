@@ -14,10 +14,28 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-red-700 text-white px-8 py-3 rounded-lg hover:bg-red-800 transition duration-300;
+    @apply bg-red-700 text-white px-8 py-4 rounded-lg hover:bg-red-800 transition duration-300 text-lg font-semibold;
   }
   
   .btn-secondary {
-    @apply border-2 border-red-700 text-white px-8 py-3 rounded-lg hover:bg-red-700/20 transition duration-300;
+    @apply border-2 border-red-700 text-white px-8 py-4 rounded-lg hover:bg-red-700/20 transition duration-300 text-lg font-semibold;
+  }
+}
+
+@layer utilities {
+  .animate-gradient-x {
+    animation: gradient-x 15s linear infinite;
+  }
+
+  @keyframes gradient-x {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 }
