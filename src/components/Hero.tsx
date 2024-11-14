@@ -1,6 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="relative h-screen">
       <div 
@@ -20,10 +23,16 @@ const Hero = () => {
             Celebrate and preserve the heart of Haiti through culture, exchange, and education.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-red-700 text-white px-8 py-3 rounded-lg hover:bg-red-800 transition duration-300">
+            <button 
+              onClick={() => navigate('/museum')}
+              className="bg-red-700 text-white px-8 py-3 rounded-lg hover:bg-red-800 transition duration-300"
+            >
               Explore Museum
             </button>
-            <button className="border-2 border-red-700 text-white px-8 py-3 rounded-lg hover:bg-red-700/20 transition duration-300">
+            <button 
+              onClick={() => navigate('/support')}
+              className="border-2 border-red-700 text-white px-8 py-3 rounded-lg hover:bg-red-700/20 transition duration-300"
+            >
               Support Our Mission
             </button>
           </div>

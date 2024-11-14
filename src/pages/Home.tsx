@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowRight, Star, Calendar, Users, ChevronRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
   const [scrollY, setScrollY] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,11 +42,17 @@ const Home = () => {
                 Journey into the heart of Haiti's spiritual heritage through our immersive cultural sanctuary
               </p>
               <div className="flex flex-col sm:flex-row gap-6">
-                <button className="group btn-primary flex items-center justify-center">
+                <button 
+                  onClick={() => navigate('/museum')}
+                  className="group btn-primary flex items-center justify-center"
+                >
                   Explore Museum
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <button className="group btn-secondary flex items-center justify-center">
+                <button 
+                  onClick={() => navigate('/support')}
+                  className="group btn-secondary flex items-center justify-center"
+                >
                   Support Our Mission
                   <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </button>
