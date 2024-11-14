@@ -19,7 +19,7 @@ const Home = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{
-            backgroundImage: 'url("https://th-thumbnailer.cdn-si-edu.com/dB7m2Rl4d4u3q0yGTahjNhE4_t0=/fit-in/1600x0/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/de/d6/ded6c936-6194-4eec-af5f-2866cd9f1c9a/julaug2017_d03_photopackagevodou.jpg")',
+            backgroundImage: 'url("https://api.time.com/wp-content/uploads/2012/08/basement_vodou_edit_016.jpg")',
             transform: `translateY(${scrollY * 0.5}px)`,
           }}
         >
@@ -105,7 +105,7 @@ const Home = () => {
               <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-red-900 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
               <div className="relative">
                 <img 
-                  src="https://www.learnreligions.com/thmb/5ZQLLjlRhMd48natOB1vDbA8X6c=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-755658891-5ae9cf3c8023b900369b5553.jpg" 
+                  src="https://api.time.com/wp-content/uploads/2012/08/basement_vodou_edit_0041.jpg"
                   alt="Sacred artifacts"
                   className="rounded-2xl shadow-2xl transform group-hover:scale-[1.02] transition duration-300"
                 />
@@ -134,19 +134,19 @@ const Home = () => {
               {
                 title: "Cultural Workshops",
                 description: "Immersive learning experiences led by Vodou practitioners",
-                image: "https://universes.art/fileadmin/user_upload/Specials/Vodou/Temples-Rituals-400-267.jpg",
+                image: "https://media.istockphoto.com/id/156823289/vector/papa-legba-for-voodoo.jpg?s=612x612&w=0&k=20&c=oXaAN9KRm4410wS-i6tqDh2pT0tthgQZRNjENd9Ou6w=",
                 icon: Calendar
               },
               {
                 title: "Community Events",
                 description: "Celebrations and ceremonies that honor our traditions",
-                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5bi-34JXGUM11DtBqbFTr6hSiAmF8lRSatQ&s",
+                image: "https://i.guim.co.uk/img/media/720f564a9ecf5009a8029ac895b7fef271d71ca5/0_70_2500_1500/master/2500.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=d664e1550e7b5a83b781729994e3e258",
                 icon: Users
               },
               {
                 title: "Research Center",
                 description: "Preserving and documenting our spiritual heritage",
-                image: "https://richeskarayib.com/wp-content/uploads/2024/11/Photo-de-larticle.jpg",
+                image: "https://vamzzz.com/blog/wp-content/uploads/2021/02/vevers-asson.jpg",
                 icon: Star
               }
             ].map((program, index) => (

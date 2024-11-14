@@ -45,7 +45,7 @@ const Museum = () => {
                 Experience the Living Tradition of Vodou
               </h2>
               <p className="text-gray-300 text-lg leading-relaxed">
-                The Holicha Vodou Museum stands as a testament to the enduring spirit of Haitian culture. Our museum houses an extensive collection of sacred artifacts, ceremonial objects, and contemporary art that illustrates the rich tapestry of Vodou traditions.
+                Our Interpretation Center, with an indigenous character, is classified under the category of ethnology museums; serving as a college, sanctuary, and center of intellectual research. It ambitiously aims, among other things, to bring knowledge and understanding through a new approach to cultural dissemination of our spiritual practices, outlined within an educational framework.
               </p>
               <div className="grid sm:grid-cols-2 gap-6">
                 <div className="bg-red-950/30 p-6 rounded-lg border border-red-900/50">

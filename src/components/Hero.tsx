@@ -17,7 +17,7 @@ const Hero = () => {
             LAKOU VODOU
           </h1>
           <p className="text-xl md:text-2xl text-gray-200 mb-8">
-            Discover the rich heritage of Haitian Vodou through art, culture, and spiritual tradition
+            Celebrate and preserve the heart of Haiti through culture, exchange, and education.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-red-700 text-white px-8 py-3 rounded-lg hover:bg-red-800 transition duration-300">

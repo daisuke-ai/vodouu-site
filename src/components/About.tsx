@@ -10,7 +10,7 @@ const About = () => {
               Cultural Center of Excellence
             </h2>
             <p className="text-gray-300 text-lg">
-              Lakou Hounto supports artistic and sociocultural projects that celebrate Haiti's intangible heritage through events and participatory projects. Our center is dedicated to the access, conservation, and promotion of Vodou heritage and cultures.
+              This center is also an archival laboratory of oral traditions, serving as a behavioral compass for the intangible heritage of the Black race. Through our sacred celebrations, we honor and keep alive the breath of our heritage.
             </p>
             <div className="grid grid-cols-2 gap-4 pt-4">
               <div className="border border-red-800 p-4 rounded-lg">

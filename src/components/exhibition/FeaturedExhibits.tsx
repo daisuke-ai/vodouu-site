@@ -21,7 +21,7 @@ const MobileExhibition = () => {
             </div>
             <h2 className="text-4xl font-bold text-white">Experience Vodou Heritage Anywhere</h2>
             <p className="text-gray-300 text-lg leading-relaxed">
-              Our mobile and virtual exhibitions bring the rich traditions of Haitian Vodou directly to you, making cultural education accessible to everyone, everywhere.
+              The idea of a mobile exhibition is particularly relevant to bring our intangible heritage to an audience unaware of its contribution to human freedom. Stay connected with us to obtain our annual exhibition calendar, in museums and universities near you.
             </p>
             <div className="grid gap-6">
               <div className="flex items-start gap-4 p-4 bg-red-950/20 rounded-lg border border-red-900/20">
