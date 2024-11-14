@@ -146,7 +146,7 @@ const Home = () => {
               {
                 title: "Research Center",
                 description: "Preserving and documenting our spiritual heritage",
-                image: "https://scontent.fisb17-1.fna.fbcdn.net/v/t39.30808-6/305575360_392769853024297_1522914858424423692_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeFhSvTROzddxqxeVtpW4S63bJQFu0P8ZrZslAW7Q_xmtoIP53HVn_cAwUXkX__6HFyRLCOl3L8CQw7_4MlMpn4S&_nc_ohc=XqzEG3WVfn0Q7kNvgEqOncx&_nc_zt=23&_nc_ht=scontent.fisb17-1.fna&_nc_gid=AYaQWzOVizGXPRCRFZ3KXHx&oh=00_AYCgl_T9OHnX32oBJie17lR7McNVfCHoT3Rik4Be8X-iFw&oe=67354CD9",
+                image: "https://richeskarayib.com/wp-content/uploads/2024/11/Photo-de-larticle.jpg",
                 icon: Star
               }
             ].map((program, index) => (
