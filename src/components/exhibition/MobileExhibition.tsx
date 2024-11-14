@@ -36,7 +36,7 @@ const ExhibitionPreview = () => {
               <div className="relative">
                 <div className="aspect-w-4 aspect-h-5 rounded-lg overflow-hidden">
                   <img 
-                    src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&q=80" 
+                    src="https://beadsofparadisenyc.com/cdn/shop/products/CeremonyHaitianFlag.webp?v=1655172962&width=1788" 
                     alt="Exhibition Preview" 
                     className="object-cover w-full h-full"
                   />

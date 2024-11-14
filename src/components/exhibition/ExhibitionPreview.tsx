@@ -5,19 +5,19 @@ const exhibits = [
   {
     title: "Drapo Vodou",
     description: "Sacred ceremonial flags embodying spiritual symbolism",
-    image: "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&q=80",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSG36ugy5TlJfTouirkMKJH8X0rdx1yrIvxA&s",
     category: "Sacred Objects"
   },
   {
     title: "Loa Spirits",
     description: "Exploring the divine spirits of Vodou tradition",
-    image: "https://images.unsplash.com/photo-1590452224879-867e8012a828?auto=format&fit=crop&q=80",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyDn3fUWSAFR8uyraiIWNiRyZ82r8asKdIqQ&s",
     category: "Spiritual Heritage"
   },
   {
     title: "Ritual Objects",
     description: "Ceremonial artifacts and their sacred significance",
-    image: "https://images.unsplash.com/photo-1577083552431-6e5fd01988ec?auto=format&fit=crop&q=80",
+    image: "https://images.squarespace-cdn.com/content/v1/631b640f7f3d3d303fe92fa1/17df5d10-99c3-43e3-a8e4-c5c779b28337/53573654506_4484997919_k.jpg",
     category: "Ceremonies"
   }
 ];

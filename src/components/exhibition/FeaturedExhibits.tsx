@@ -10,7 +10,7 @@ const MobileExhibition = () => {
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-to-r from-red-600 to-red-900 rounded-xl blur opacity-25"></div>
             <img 
-              src="https://images.unsplash.com/photo-1577083552431-6e5fd01988ec?auto=format&fit=crop&q=80" 
+              src="https://mljdb885ttsd.i.optimole.com/w:auto/h:auto/q:mauto/ig:avif/f:best/https://www.7thheavenproperties.com/wp-content/uploads/2016/04/philippe-dodard-contemporary-art-haiti-baner.jpg" 
               alt="Mobile Exhibition" 
               className="relative rounded-lg shadow-2xl"
             />

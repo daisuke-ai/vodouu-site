@@ -11,7 +11,7 @@ const ExhibitionHero = ({ scrollY }: ExhibitionHeroProps) => {
       <div 
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1590452224879-867e8012a828?auto=format&fit=crop&q=80")',
+          backgroundImage: 'url("https://sites.duke.edu/lawandhousinginhaiti/files/2012/04/cropped-haitian-girls-442639-sw.jpg")',
           transform: `translateY(${scrollY * 0.5}px)`,
         }}
       >
