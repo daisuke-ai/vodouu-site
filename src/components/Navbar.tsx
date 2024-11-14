@@ -1,24 +1,40 @@
 import React, { useState } from 'react';
 import { Menu, X, Drum } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+
+  const isActivePath = (path: string) => {
+    return location.pathname === path ? "text-red-600" : "text-gray-300";
+  };
 
   return (
     <nav className="bg-black/95 fixed w-full z-50 border-b border-red-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <div className="flex-shrink-0">
+            <Link to="/" className="flex-shrink-0">
               <Drum className="h-8 w-8 text-red-600" />
-            </div>
+            </Link>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
-                <a href="#" className="text-red-600 hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                <a href="#" className="text-gray-300 hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium">Exhibition</a>
-                <a href="#" className="text-gray-300 hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium">Museum</a>
-                <a href="#" className="text-gray-300 hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium">Shop</a>
-                <a href="#" className="text-gray-300 hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium">Support Us</a>
+                <Link to="/" className={`${isActivePath('/')} hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium`}>
+                  Home
+                </Link>
+                <Link to="/exhibition" className={`${isActivePath('/exhibition')} hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium`}>
+                  Exhibition
+                </Link>
+                <Link to="/museum" className={`${isActivePath('/museum')} hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium`}>
+                  Museum
+                </Link>
+                <Link to="/shop" className={`${isActivePath('/shop')} hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium`}>
+                  Shop
+                </Link>
+                <Link to="/support" className={`${isActivePath('/support')} hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium`}>
+                  Support Us
+                </Link>
               </div>
             </div>
           </div>
@@ -35,11 +51,21 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="#" className="text-red-600 block px-3 py-2 rounded-md text-base font-medium">Home</a>
-            <a href="#" className="text-gray-300 hover:text-red-500 block px-3 py-2 rounded-md text-base font-medium">Exhibition</a>
-            <a href="#" className="text-gray-300 hover:text-red-500 block px-3 py-2 rounded-md text-base font-medium">Museum</a>
-            <a href="#" className="text-gray-300 hover:text-red-500 block px-3 py-2 rounded-md text-base font-medium">Shop</a>
-            <a href="#" className="text-gray-300 hover:text-red-500 block px-3 py-2 rounded-md text-base font-medium">Support Us</a>
+            <Link to="/" className={`${isActivePath('/')} hover:text-red-500 block px-3 py-2 rounded-md text-base font-medium`}>
+              Home
+            </Link>
+            <Link to="/exhibition" className={`${isActivePath('/exhibition')} hover:text-red-500 block px-3 py-2 rounded-md text-base font-medium`}>
+              Exhibition
+            </Link>
+            <Link to="/museum" className={`${isActivePath('/museum')} hover:text-red-500 block px-3 py-2 rounded-md text-base font-medium`}>
+              Museum
+            </Link>
+            <Link to="/shop" className={`${isActivePath('/shop')} hover:text-red-500 block px-3 py-2 rounded-md text-base font-medium`}>
+              Shop
+            </Link>
+            <Link to="/support" className={`${isActivePath('/support')} hover:text-red-500 block px-3 py-2 rounded-md text-base font-medium`}>
+              Support Us
+            </Link>
           </div>
         </div>
       )}
