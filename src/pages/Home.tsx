@@ -39,7 +39,7 @@ const Home = () => {
                 <span className="text-white block transform hover:scale-105 transition-transform duration-300 mt-2">VODOU</span>
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 mt-8 mb-10 max-w-2xl leading-relaxed">
-                Journey into the heart of Haiti's spiritual heritage through our immersive cultural sanctuary
+            Travel to the heart of Haiti’s spiritual heritage through our cultural education sanctuary.
               </p>
               <div className="flex flex-col sm:flex-row gap-6">
                 <button 
@@ -87,10 +87,10 @@ const Home = () => {
                 <span className="text-red-600 font-semibold">Featured Exhibition</span>
               </div>
               <h2 className="text-5xl md:text-6xl font-bold text-white leading-tight">
-                Sacred Traditions of Haitian Vodou
+              Discover Vodou
               </h2>
               <p className="text-gray-300 text-xl leading-relaxed">
-                Immerse yourself in our latest exhibition showcasing the rich tapestry of Vodou traditions, featuring sacred artifacts, ceremonial objects, and contemporary interpretations.
+              Lakou Hounto supports projects developed in the artistic and sociocultural fields that highlight Haiti’s intangible heritage through events or participatory projects.
               </p>
               <div className="flex items-center gap-12">
                 <div className="relative">
@@ -113,7 +113,7 @@ const Home = () => {
               <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-red-900 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
               <div className="relative">
                 <img 
-                  src="https://api.time.com/wp-content/uploads/2012/08/basement_vodou_edit_0041.jpg"
+                  src="https://i.imgur.com/ETf4619.png"
                   alt="Sacred artifacts"
                   className="rounded-2xl shadow-2xl transform group-hover:scale-[1.02] transition duration-300"
                 />
@@ -134,14 +134,14 @@ const Home = () => {
           <div className="text-center max-w-3xl mx-auto mb-20">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">Cultural Programs</h2>
             <p className="text-gray-300 text-xl">
-              Immerse yourself in our diverse range of programs designed to preserve and share the rich heritage of Haitian Vodou
+            Immerse yourself in our diverse range of programs designed to preserve and share the rich heritage of Haitian Vodou. Access, conservation, and promotion of heritage and culture.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-12">
             {[
               {
                 title: "Cultural Workshops",
-                description: "Immersive learning experiences led by Vodou practitioners",
+                description: "An Academic Center, focused on current events, history, events, information, and spirituality, dedicated to the study of Haitian Vodou",
                 image: "https://media.istockphoto.com/id/156823289/vector/papa-legba-for-voodoo.jpg?s=612x612&w=0&k=20&c=oXaAN9KRm4410wS-i6tqDh2pT0tthgQZRNjENd9Ou6w=",
                 icon: Calendar
               },
@@ -153,7 +153,7 @@ const Home = () => {
               },
               {
                 title: "Research Center",
-                description: "Preserving and documenting our spiritual heritage",
+                description: "We preserve our spiritual heritage through celebrations that honor our traditions.",
                 image: "https://vamzzz.com/blog/wp-content/uploads/2021/02/vevers-asson.jpg",
                 icon: Star
               }
@@ -192,7 +192,8 @@ const Home = () => {
                   Join Us in Preserving Haiti's<br />Sacred Heritage
                 </h2>
                 <p className="text-gray-300 text-xl max-w-2xl mx-auto mb-12">
-                  Support our mission to protect and share the rich traditions of Haitian Vodou for future generations
+                  Stand with us in protecting and sharing the rich traditions of Haitian Vodou.
+                  Become a guardian of heritage, a bearer of legacy.
                 </p>
                 <button className="group bg-white text-red-900 px-12 py-4 rounded-lg hover:bg-gray-100 transition duration-300 font-semibold text-lg flex items-center mx-auto">
                   Become a Supporter
