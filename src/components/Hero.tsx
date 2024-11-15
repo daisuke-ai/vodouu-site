@@ -1,8 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Hero = () => {
   const navigate = useNavigate();
+  const { t } = useLanguage();
 
   return (
     <div className="relative h-screen">
@@ -17,10 +19,10 @@ const Hero = () => {
       <div className="relative h-full flex items-center justify-center">
         <div className="text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl md:text-7xl font-bold text-red-600 mb-6">
-            LAKOU VODOU
+            {t('hero.title')}
           </h1>
           <p className="text-xl md:text-2xl text-gray-200 mb-8">
-            Celebrate and preserve the heart of Haiti through culture, exchange, and education.
+            {t('hero.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
