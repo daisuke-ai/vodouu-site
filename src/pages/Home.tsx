@@ -23,7 +23,7 @@ const Home = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{
-            backgroundImage: 'url("https://api.time.com/wp-content/uploads/2012/08/basement_vodou_edit_016.jpg")',
+            backgroundImage: 'url("https://cdn.thecollector.com/wp-content/uploads/2022/01/frantz-damballah-tresor-death-lwa-famille-prefette-painting.jpg")',
             transform: `translateY(${scrollY * 0.5}px)`,
           }}
         >
