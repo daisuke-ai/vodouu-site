@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ExhibitionHero from '../components/exhibition/ExhibitionHero';
 import FeaturedExhibits from '../components/exhibition/FeaturedExhibits';
-import MobileExhibition from '../components/exhibition/MobileExhibition';
 import ExhibitionPreview from '../components/exhibition/ExhibitionPreview';
 
 const Exhibition = () => {
@@ -17,7 +16,6 @@ const Exhibition = () => {
     <main className="pt-16">
       <ExhibitionHero scrollY={scrollY} />
       <FeaturedExhibits />
-      <MobileExhibition />
       <ExhibitionPreview />
     </main>
   );

@@ -1,11 +1,14 @@
 import React from 'react';
 import { Calendar, Clock, MapPin, Users } from 'lucide-react';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 interface ExhibitionHeroProps {
   scrollY: number;
 }
 
 const ExhibitionHero = ({ scrollY }: ExhibitionHeroProps) => {
+  const { t } = useLanguage();
+  
   return (
     <section className="relative h-[90vh] overflow-hidden">
       <div 
@@ -22,13 +25,15 @@ const ExhibitionHero = ({ scrollY }: ExhibitionHeroProps) => {
           <div className="max-w-3xl">
             <div className="flex items-center gap-2 mb-6">
               <div className="h-px w-12 bg-red-600"></div>
-              <span className="text-red-600 uppercase tracking-wider text-sm font-semibold">2025-2027 Major Exhibition</span>
+              <span className="text-red-600 uppercase tracking-wider text-sm font-semibold">
+                {t('exhibition.hero.badge')}
+              </span>
             </div>
             <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 leading-none">
-              Sacred Traditions of <span className="text-red-600">Haitian Vodou</span>
+              {t('exhibition.hero.title')}
             </h1>
             <p className="text-xl text-gray-300 mb-12 leading-relaxed">
-              Journey through centuries of spiritual heritage, from the roots of Vodou to its profound influence on human freedom and cultural identity
+              {t('exhibition.hero.subtitle')}
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div className="bg-black/50 backdrop-blur-sm p-4 rounded-lg border border-red-900/20">

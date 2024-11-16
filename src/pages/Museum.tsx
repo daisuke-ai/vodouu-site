@@ -1,7 +1,18 @@
 import React from 'react';
 import { ScrollText, Camera, Book, Users, ArrowRight, Calendar } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Museum = () => {
+  const { t } = useLanguage();
+  
+  const features = [
+    { icon: ScrollText, key: 'artifacts' },
+    { icon: Camera, key: 'virtualTours' },
+    { icon: Book, key: 'library' },
+    { icon: Users, key: 'guidedTours' },
+    { icon: Calendar, key: 'exhibitions' }
+  ];
+
   return (
     <main className="pt-16">
       {/* Hero Section */}
@@ -19,16 +30,18 @@ const Museum = () => {
             <div className="max-w-3xl">
               <div className="flex items-center gap-2 mb-6">
                 <div className="h-px w-12 bg-red-600"></div>
-                <span className="text-red-600 uppercase tracking-wider text-sm font-semibold">Holicha Vodou Museum</span>
+                <span className="text-red-600 uppercase tracking-wider text-sm font-semibold">
+                  {t('museum.hero.badge')}
+                </span>
               </div>
               <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-                Preserving Sacred Heritage
+                {t('museum.hero.title')}
               </h1>
               <p className="text-xl text-gray-300 mb-8">
-                Journey through centuries of Haitian Vodou tradition, art, and spirituality in our immersive museum experience.
+                {t('museum.hero.subtitle')}
               </p>
               <button className="btn-primary flex items-center group">
-                Plan Your Visit
+                {t('museum.hero.cta')}
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
@@ -42,19 +55,19 @@ const Museum = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <h2 className="text-4xl font-bold text-white">
-                Experience the Living Tradition of Vodou
+                {t('museum.overview.title')}
               </h2>
               <p className="text-gray-300 text-lg leading-relaxed">
-                Our Interpretation Center, with an indigenous character, is classified under the category of ethnology museums; serving as a college, sanctuary, and center of intellectual research. It ambitiously aims, among other things, to bring knowledge and understanding through a new approach to cultural dissemination of our spiritual practices, outlined within an educational framework.
+                {t('museum.overview.description')}
               </p>
               <div className="grid sm:grid-cols-2 gap-6">
                 <div className="bg-red-950/30 p-6 rounded-lg border border-red-900/50">
                   <p className="text-red-600 text-3xl font-bold mb-1">200+</p>
-                  <p className="text-gray-400">Sacred Artifacts</p>
+                  <p className="text-gray-400">{t('museum.overview.stats.artifacts')}</p>
                 </div>
                 <div className="bg-red-950/30 p-6 rounded-lg border border-red-900/50">
                   <p className="text-red-600 text-3xl font-bold mb-1">50+</p>
-                  <p className="text-gray-400">Annual Events</p>
+                  <p className="text-gray-400">{t('museum.overview.stats.events')}</p>
                 </div>
               </div>
             </div>
@@ -74,39 +87,15 @@ const Museum = () => {
       <section className="py-24 bg-gradient-to-b from-black to-red-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-6">Museum Features</h2>
+            <h2 className="text-4xl font-bold text-white mb-6">
+              {t('museum.features.title')}
+            </h2>
             <p className="text-gray-300 max-w-2xl mx-auto text-lg">
-              Discover our comprehensive collection and educational programs designed to preserve and share Vodou heritage.
+              {t('museum.features.subtitle')}
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                icon: ScrollText,
-                title: "Sacred Artifacts",
-                description: "Explore our collection of authentic Vodou ceremonial objects and ritual items."
-              },
-              {
-                icon: Camera,
-                title: "Virtual Tours",
-                description: "Experience the museum from anywhere through our immersive virtual exhibitions."
-              },
-              {
-                icon: Book,
-                title: "Research Library",
-                description: "Access our extensive archive of documents and scholarly resources."
-              },
-              {
-                icon: Users,
-                title: "Guided Tours",
-                description: "Learn from expert guides who share deep knowledge of Vodou traditions."
-              },
-              {
-                icon: Calendar,
-                title: "Special Exhibitions",
-                description: "Rotating exhibitions showcasing different aspects of Vodou culture."
-              }
-            ].map((feature, index) => (
+            {features.map((feature, index) => (
               <div 
                 key={index}
                 className="group relative transform hover:-translate-y-2 transition-all duration-300"
@@ -114,8 +103,8 @@ const Museum = () => {
                 <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-red-900 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
                 <div className="relative bg-black p-8 rounded-lg border border-red-900/50">
                   <feature.icon className="h-8 w-8 text-red-600 mb-4" />
-                  <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
-                  <p className="text-gray-300">{feature.description}</p>
+                  <h3 className="text-xl font-bold text-white mb-3">{t(`museum.features.items.${feature.key}.title`)}</h3>
+                  <p className="text-gray-300">{t(`museum.features.items.${feature.key}.description`)}</p>
                 </div>
               </div>
             ))}
@@ -131,23 +120,45 @@ const Museum = () => {
             <div className="relative bg-red-950/50 rounded-2xl p-12">
               <div className="grid md:grid-cols-2 gap-12">
                 <div>
-                  <h2 className="text-3xl font-bold text-white mb-6">Plan Your Visit</h2>
+                  <h2 className="text-3xl font-bold text-white mb-6">
+                    {t('museum.visit.title')}
+                  </h2>
                   <div className="space-y-6 text-gray-300">
                     <div>
-                      <h3 className="text-xl font-semibold text-red-500 mb-2">Hours</h3>
-                      <p>Tuesday - Sunday: 10:00 AM - 6:00 PM</p>
-                      <p>Closed on Mondays</p>
+                      <h3 className="text-xl font-semibold text-red-500 mb-2">
+                        {t('museum.visit.hours.title')}
+                      </h3>
+                      <p>
+                        {t('museum.visit.hours.schedule')}
+                      </p>
+                      <p>
+                        {t('museum.visit.hours.closed')}
+                      </p>
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-red-500 mb-2">Admission</h3>
-                      <p>Adults: $15</p>
-                      <p>Students & Seniors: $10</p>
-                      <p>Children under 12: Free</p>
+                      <h3 className="text-xl font-semibold text-red-500 mb-2">
+                        {t('museum.visit.admission.title')}
+                      </h3>
+                      <p>
+                        {t('museum.visit.admission.adult')}
+                      </p>
+                      <p>
+                        {t('museum.visit.admission.student')}
+                      </p>
+                      <p>
+                        {t('museum.visit.admission.children')}
+                      </p>
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-red-500 mb-2">Location</h3>
-                      <p>123 Heritage Avenue</p>
-                      <p>Port-au-Prince, Haiti</p>
+                      <h3 className="text-xl font-semibold text-red-500 mb-2">
+                        {t('museum.visit.location.title')}
+                      </h3>
+                      <p>
+                        {t('museum.visit.location.address')[0]}
+                      </p>
+                      <p>
+                        {t('museum.visit.location.address')[1]}
+                      </p>
                     </div>
                   </div>
                 </div>

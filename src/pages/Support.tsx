@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { Heart, Gift, Users, Brush, ArrowRight, Mail, Check } from 'lucide-react';
+import { Heart, Gift, Users, Brush, ArrowRight, Check, Mail } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Support = () => {
+  const { t } = useLanguage();
   const [email, setEmail] = useState('');
   const [selectedAmount, setSelectedAmount] = useState<number | 'custom'>(100);
   const [customAmount, setCustomAmount] = useState('');
@@ -14,24 +16,9 @@ const Support = () => {
   };
 
   const supportCategories = [
-    {
-      icon: Gift,
-      title: "Cultural Preservation",
-      description: "Support the preservation and documentation of Vodou artifacts and traditions",
-      impact: "Helps preserve 10+ artifacts"
-    },
-    {
-      icon: Users,
-      title: "Community Programs",
-      description: "Fund educational workshops and community engagement initiatives",
-      impact: "Supports 5 workshop sessions"
-    },
-    {
-      icon: Brush,
-      title: "Artist Residencies",
-      description: "Enable artists to explore and create works inspired by Vodou heritage",
-      impact: "Sponsors 1 artist for a month"
-    }
+    { key: 'preservation', icon: Gift },
+    { key: 'programs', icon: Users },
+    { key: 'residencies', icon: Brush }
   ];
 
   return (
@@ -51,13 +38,15 @@ const Support = () => {
             <div className="max-w-3xl">
               <div className="flex items-center gap-2 mb-6">
                 <Heart className="h-6 w-6 text-red-600" />
-                <span className="text-red-600 uppercase tracking-wider text-sm font-semibold">Support Our Mission</span>
+                <span className="text-red-600 uppercase tracking-wider text-sm font-semibold">
+                  {t('support.hero.badge')}
+                </span>
               </div>
               <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-                Preserve Our Sacred Heritage
+                {t('support.hero.title')}
               </h1>
               <p className="text-xl text-gray-300 mb-8">
-                Your support helps us maintain and share Haiti's rich Vodou traditions for future generations
+                {t('support.hero.subtitle')}
               </p>
             </div>
           </div>
@@ -69,9 +58,9 @@ const Support = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16">
             <div className="space-y-8">
-              <h2 className="text-4xl font-bold text-white">Make a Donation</h2>
+              <h2 className="text-4xl font-bold text-white">{t('support.donation.title')}</h2>
               <p className="text-gray-300 text-lg">
-                Your contribution directly supports our mission to preserve and share Haiti's spiritual heritage
+                {t('support.donation.description')}
               </p>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -108,7 +97,7 @@ const Support = () => {
                   type="submit"
                   className="w-full btn-primary flex items-center justify-center group"
                 >
-                  Donate Now
+                  {t('support.donation.amounts.button')}
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </form>
@@ -116,26 +105,27 @@ const Support = () => {
               {showThankYou && (
                 <div className="flex items-center gap-2 text-green-500">
                   <Check className="h-5 w-5" />
-                  <span>Thank you for your support!</span>
+                  <span>{t('support.donation.thankYou')}</span>
                 </div>
               )}
             </div>
 
             <div className="space-y-8">
               <div className="grid gap-6">
-                {supportCategories.map((category, index) => (
-                  <div
-                    key={index}
-                    className="relative group"
-                  >
+                {supportCategories.map((category) => (
+                  <div key={category.key} className="relative group">
                     <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-red-900 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
                     <div className="relative bg-black p-6 rounded-lg border border-red-900/30">
                       <category.icon className="h-8 w-8 text-red-600 mb-4" />
-                      <h3 className="text-xl font-bold text-white mb-2">{category.title}</h3>
-                      <p className="text-gray-400 mb-4">{category.description}</p>
+                      <h3 className="text-xl font-bold text-white mb-2">
+                        {t(`support.categories.${category.key}.title`)}
+                      </h3>
+                      <p className="text-gray-400 mb-4">
+                        {t(`support.categories.${category.key}.description`)}
+                      </p>
                       <div className="flex items-center gap-2 text-red-500">
                         <Check className="h-5 w-5" />
-                        <span>{category.impact}</span>
+                        <span>{t(`support.categories.${category.key}.impact`)}</span>
                       </div>
                     </div>
                   </div>
@@ -154,14 +144,16 @@ const Support = () => {
             <div className="relative bg-black/50 backdrop-blur-sm rounded-2xl p-12">
               <div className="max-w-2xl mx-auto text-center">
                 <Mail className="h-12 w-12 text-red-600 mx-auto mb-6" />
-                <h2 className="text-3xl font-bold text-white mb-4">Stay Connected</h2>
+                <h2 className="text-3xl font-bold text-white mb-4">
+                  {t('support.newsletter.title')}
+                </h2>
                 <p className="text-gray-300 mb-8">
-                  Subscribe to our newsletter for updates on exhibitions, events, and ways to support our mission
+                  {t('support.newsletter.description')}
                 </p>
                 <form className="flex gap-4">
                   <input
                     type="email"
-                    placeholder="Enter your email"
+                    placeholder={t('support.newsletter.placeholder')}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className="flex-1 px-4 py-3 bg-black/50 border border-red-900/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-red-600 transition duration-300"
@@ -170,7 +162,7 @@ const Support = () => {
                     type="submit"
                     className="btn-primary whitespace-nowrap"
                   >
-                    Subscribe
+                    {t('support.newsletter.button')}
                   </button>
                 </form>
               </div>

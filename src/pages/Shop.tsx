@@ -1,14 +1,21 @@
 import React from 'react';
 import { ShoppingBag, Bell, ArrowRight } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Shop = () => {
   const [email, setEmail] = React.useState('');
+  const { t } = useLanguage();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle email submission logic here
     setEmail('');
   };
+
+  const categories = [
+    { key: 'artifacts' },
+    { key: 'books' },
+    { key: 'artPrints' }
+  ];
 
   return (
     <main className="pt-16">
@@ -29,11 +36,11 @@ const Shop = () => {
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-              Shop Coming Soon
+              {t('shop.hero.title')}
             </h1>
             
             <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-              Our curated collection of authentic Vodou artifacts, educational materials, and cultural merchandise will be available soon.
+              {t('shop.hero.subtitle')}
             </p>
             
             <div className="relative max-w-md mx-auto mb-12">
@@ -41,14 +48,14 @@ const Shop = () => {
               <div className="relative bg-black/50 backdrop-blur-sm p-8 rounded-lg border border-red-900/50">
                 <div className="flex items-center gap-3 mb-4 text-red-500">
                   <Bell className="h-5 w-5" />
-                  <span className="font-semibold">Get Notified</span>
+                  <span className="font-semibold">{t('shop.hero.notification.title')}</span>
                 </div>
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter your email"
+                    placeholder={t('shop.hero.notification.placeholder')}
                     className="w-full px-4 py-3 bg-black/50 border border-red-900/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-red-600 transition duration-300"
                     required
                   />
@@ -56,7 +63,7 @@ const Shop = () => {
                     type="submit"
                     className="w-full btn-primary flex items-center justify-center group"
                   >
-                    Notify Me
+                    {t('shop.hero.notification.button')}
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </button>
                 </form>
@@ -64,17 +71,17 @@ const Shop = () => {
             </div>
             
             <div className="grid sm:grid-cols-3 gap-8 max-w-2xl mx-auto">
-              {[
-                { title: 'Artifacts', description: 'Authentic replicas and cultural items' },
-                { title: 'Books', description: 'Educational materials and literature' },
-                { title: 'Art Prints', description: 'Contemporary Vodou-inspired artwork' }
-              ].map((item, index) => (
+              {categories.map((item, index) => (
                 <div 
                   key={index}
                   className="bg-red-950/20 border border-red-900/30 p-6 rounded-lg"
                 >
-                  <h3 className="text-lg font-semibold text-red-500 mb-2">{item.title}</h3>
-                  <p className="text-gray-400 text-sm">{item.description}</p>
+                  <h3 className="text-lg font-semibold text-red-500 mb-2">
+                    {t(`shop.categories.${item.key}.title`)}
+                  </h3>
+                  <p className="text-gray-400 text-sm">
+                    {t(`shop.categories.${item.key}.description`)}
+                  </p>
                 </div>
               ))}
             </div>

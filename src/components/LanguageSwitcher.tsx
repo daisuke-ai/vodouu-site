@@ -1,13 +1,12 @@
-import { useState } from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
 import { Globe } from 'lucide-react';
 
 const LanguageSwitcher = () => {
-  const [currentLang, setCurrentLang] = useState('en');
+  const { language, setLanguage } = useLanguage();
 
   const toggleLanguage = () => {
-    const newLang = currentLang === 'en' ? 'fr' : 'en';
-    setCurrentLang(newLang);
-    // Trigger language change in the app
+    const newLang = language === 'en' ? 'fr' : 'en';
+    setLanguage(newLang);
   };
 
   return (
@@ -17,7 +16,7 @@ const LanguageSwitcher = () => {
     >
       <Globe className="h-5 w-5 text-red-600" />
       <span className="text-gray-300 uppercase text-sm font-medium">
-        {currentLang === 'en' ? 'FR' : 'EN'}
+        {language === 'en' ? 'FR' : 'EN'}
       </span>
     </button>
   );

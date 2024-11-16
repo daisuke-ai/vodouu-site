@@ -1,37 +1,38 @@
 import React from 'react';
-import { Drum, Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Footer = () => {
   const navigate = useNavigate();
+  const { t } = useLanguage();
 
   const quickLinks = [
-    { name: 'Exhibition', path: '/exhibition' },
-    { name: 'Museum', path: '/museum' },
-    { name: 'Shop', path: '/shop' },
-    { name: 'Support', path: '/support' }
+    { name: t('footer.quickLinks.exhibition'), path: '/exhibition' },
+    { name: t('footer.quickLinks.museum'), path: '/museum' },
+    { name: t('footer.quickLinks.shop'), path: '/shop' },
+    { name: t('footer.quickLinks.support'), path: '/support' }
   ];
 
   const programs = [
-    { name: 'Workshops', path: '/programs/workshops' },
-    { name: 'Artist Residencies', path: '/programs/residencies' },
-    { name: 'Cultural Events', path: '/programs/events' },
-    { name: 'Research', path: '/programs/research' }
+    { name: t('footer.programs.workshops'), path: '/programs/workshops' },
+    { name: t('footer.programs.artistResidencies'), path: '/programs/residencies' },
+    { name: t('footer.programs.culturalEvents'), path: '/programs/events' },
+    { name: t('footer.programs.research'), path: '/programs/research' }
   ];
 
   return (
-    <footer className="bg-black text-white py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-          <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-red-600">LAKOU VODOU</h3>
-            <p className="text-gray-400">
-              Celebrate and preserve Haiti's intangible heritage through cultural exchange and education.
-            </p>
+    <footer className="bg-black border-t border-red-900/30">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div>
+            <h2 className="text-2xl font-bold text-red-600">LAKOU VODOU</h2>
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <h3 className="text-white font-semibold mb-4">
+              {t('footer.quickLinks.title')}
+            </h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
@@ -47,40 +48,40 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-4">Programs</h4>
+            <h3 className="text-white font-semibold mb-4">
+              {t('footer.programs.title')}
+            </h3>
             <ul className="space-y-2">
               {programs.map((program) => (
-                <li key={program.name}>
-                  <button
-                    onClick={() => navigate(program.path)}
-                    className="text-gray-400 hover:text-red-600 transition-colors"
-                  >
-                    {program.name}
-                  </button>
+                <li key={program.name} className="text-gray-400">
+                  {program.name}
                 </li>
               ))}
             </ul>
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contact</h4>
+            <h3 className="text-white font-semibold mb-4">
+              {t('footer.contact.title')}
+            </h3>
             <ul className="space-y-2">
               <li className="flex items-center text-gray-400">
                 <Mail className="h-5 w-5 mr-2" />
-                info@lakouvodou.org
+                {t('footer.contact.email')}
               </li>
               <li className="flex items-center text-gray-400">
                 <Phone className="h-5 w-5 mr-2" />
-                +509 3909 8079
+                {t('footer.contact.phone')}
               </li>
-              <li className="flex items-center text-gray-400">
-                <MapPin className="h-5 w-5 mr-2" />
-                Port-au-Prince, Haiti
-              </li>
-              <li className="flex items-center text-gray-400">
-                <MapPin className="h-5 w-5 mr-2" />
-                Cap-Haïtien, Haiti
-              </li>
+              {(Array.isArray(t('footer.contact.address'))
+                ? t('footer.contact.address')
+                : [t('footer.contact.address')])
+                .map((line, index) => (
+                <li key={index} className="flex items-center text-gray-400">
+                  <MapPin className="h-5 w-5 mr-2" />
+                  {line}
+                </li>
+              ))}
             </ul>
           </div>
         </div>

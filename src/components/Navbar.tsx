@@ -6,11 +6,23 @@ import { useLanguage } from '../contexts/LanguageContext';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-  const { language, setLanguage } = useLanguage();
+  const { language, setLanguage, t } = useLanguage();
 
   const isActivePath = (path: string) => {
     return location.pathname === path ? "text-red-600" : "text-gray-300";
   };
+
+  const toggleLanguage = () => {
+    setLanguage(language === 'en' ? 'fr' : 'en');
+  };
+
+  const navItems = [
+    { href: '/', label: t('nav.home') },
+    { href: '/exhibition', label: t('nav.exhibition') },
+    { href: '/museum', label: t('nav.museum') },
+    { href: '/shop', label: t('nav.shop') },
+    { href: '/support', label: t('nav.support') }
+  ];
 
   return (
     <nav className="bg-black/95 fixed w-full z-50 border-b border-red-900">
@@ -22,21 +34,11 @@ const Navbar = () => {
             </Link>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
-                <Link to="/" className={`${isActivePath('/')} hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium`}>
-                  Home
-                </Link>
-                <Link to="/exhibition" className={`${isActivePath('/exhibition')} hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium`}>
-                  Exhibition
-                </Link>
-                <Link to="/museum" className={`${isActivePath('/museum')} hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium`}>
-                  Museum
-                </Link>
-                <Link to="/shop" className={`${isActivePath('/shop')} hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium`}>
-                  Shop
-                </Link>
-                <Link to="/support" className={`${isActivePath('/support')} hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium`}>
-                  Support Us
-                </Link>
+                {navItems.map(item => (
+                  <Link key={item.href} to={item.href} className={`${isActivePath(item.href)} hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium`}>
+                    {item.label}
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
@@ -50,7 +52,7 @@ const Navbar = () => {
           </div>
           <div className="hidden md:flex items-center ml-4">
             <button
-              onClick={() => setLanguage(language === 'en' ? 'fr' : 'en')}
+              onClick={toggleLanguage}
               className="flex items-center gap-2 px-3 py-2 rounded-lg bg-red-950/30 border border-red-900/50 hover:bg-red-950/50 transition-colors"
             >
               <Globe className="h-5 w-5 text-red-600" />
@@ -64,21 +66,11 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <Link to="/" className={`${isActivePath('/')} hover:text-red-500 block px-3 py-2 rounded-md text-base font-medium`}>
-              Home
-            </Link>
-            <Link to="/exhibition" className={`${isActivePath('/exhibition')} hover:text-red-500 block px-3 py-2 rounded-md text-base font-medium`}>
-              Exhibition
-            </Link>
-            <Link to="/museum" className={`${isActivePath('/museum')} hover:text-red-500 block px-3 py-2 rounded-md text-base font-medium`}>
-              Museum
-            </Link>
-            <Link to="/shop" className={`${isActivePath('/shop')} hover:text-red-500 block px-3 py-2 rounded-md text-base font-medium`}>
-              Shop
-            </Link>
-            <Link to="/support" className={`${isActivePath('/support')} hover:text-red-500 block px-3 py-2 rounded-md text-base font-medium`}>
-              Support Us
-            </Link>
+            {navItems.map(item => (
+              <Link key={item.href} to={item.href} className={`${isActivePath(item.href)} hover:text-red-500 block px-3 py-2 rounded-md text-base font-medium`}>
+                {item.label}
+              </Link>
+            ))}
           </div>
         </div>
       )}

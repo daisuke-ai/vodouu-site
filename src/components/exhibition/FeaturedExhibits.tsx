@@ -1,7 +1,16 @@
 import React from 'react';
 import { Globe, Smartphone, BookOpen } from 'lucide-react';
+import { useLanguage } from '../../contexts/LanguageContext';
 
-const MobileExhibition = () => {
+const features = [
+  { key: 'virtualTours', icon: Globe },
+  { key: 'mobileExhibition', icon: Smartphone },
+  { key: 'digitalArchive', icon: BookOpen }
+];
+
+const FeaturedExhibits = () => {
+  const { t } = useLanguage();
+  
   return (
     <section className="py-24 bg-black relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMtNi42MjcgMC0xMiA1LjM3My0xMiAxMnM1LjM3MyAxMiAxMiAxMiAxMi01LjM3MyAxMi0xMi01LjM3My0xMi0xMi0xMnptMCAxOGMtMy4zMTQgMC02LTIuNjg2LTYtNnMyLjY4Ni02IDYtNiA2IDIuNjg2IDYgNi0yLjY4NiA2LTYgNnoiIGZpbGw9IiM5MjAwMDAiIG9wYWNpdHk9IjAuMDUiLz48L2c+PC9zdmc+')] opacity-10"></div>
@@ -10,41 +19,37 @@ const MobileExhibition = () => {
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-to-r from-red-600 to-red-900 rounded-xl blur opacity-25"></div>
             <img 
-              src="https://mljdb885ttsd.i.optimole.com/w:auto/h:auto/q:mauto/ig:avif/f:best/https://www.7thheavenproperties.com/wp-content/uploads/2016/04/philippe-dodard-contemporary-art-haiti-baner.jpg" 
-              alt="Mobile Exhibition" 
+              src="https://i.imgur.com/A7JbB6N.jpeg" 
+              alt={t('exhibition.featured.imageAlt')} 
               className="relative rounded-lg shadow-2xl"
             />
           </div>
           <div className="space-y-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-950/50 rounded-full">
-              <span className="text-red-600 font-semibold">Mobile & Virtual Access</span>
+              <span className="text-red-600 font-semibold">
+                {t('exhibition.featured.badge')}
+              </span>
             </div>
-            <h2 className="text-4xl font-bold text-white">Experience Vodou Heritage Anywhere</h2>
+            <h2 className="text-4xl font-bold text-white">
+              {t('exhibition.featured.title')}
+            </h2>
             <p className="text-gray-300 text-lg leading-relaxed">
-              The idea of a mobile exhibition is particularly relevant to bring our intangible heritage to an audience unaware of its contribution to human freedom. Stay connected with us to obtain our annual exhibition calendar, in museums and universities near you.
+              {t('exhibition.featured.description')}
             </p>
             <div className="grid gap-6">
-              <div className="flex items-start gap-4 p-4 bg-red-950/20 rounded-lg border border-red-900/20">
-                <Globe className="h-6 w-6 text-red-600 mt-1" />
-                <div>
-                  <h3 className="text-lg font-semibold text-white">Virtual Tours</h3>
-                  <p className="text-gray-400">Immersive 360° experiences of our exhibitions</p>
+              {features.map((feature) => (
+                <div key={feature.key} className="flex items-start gap-4 p-4 bg-red-950/20 rounded-lg border border-red-900/20">
+                  <feature.icon className="h-6 w-6 text-red-600 mt-1" />
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">
+                      {t(`exhibition.featured.features.${feature.key}.title`)}
+                    </h3>
+                    <p className="text-gray-400">
+                      {t(`exhibition.featured.features.${feature.key}.description`)}
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div className="flex items-start gap-4 p-4 bg-red-950/20 rounded-lg border border-red-900/20">
-                <Smartphone className="h-6 w-6 text-red-600 mt-1" />
-                <div>
-                  <h3 className="text-lg font-semibold text-white">Mobile Exhibition</h3>
-                  <p className="text-gray-400">Traveling displays at museums and universities</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4 p-4 bg-red-950/20 rounded-lg border border-red-900/20">
-                <BookOpen className="h-6 w-6 text-red-600 mt-1" />
-                <div>
-                  <h3 className="text-lg font-semibold text-white">Digital Archive</h3>
-                  <p className="text-gray-400">Comprehensive online collection database</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -53,4 +58,4 @@ const MobileExhibition = () => {
   );
 };
 
-export default MobileExhibition;
+export default FeaturedExhibits;
