@@ -25,55 +25,68 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-black/95 fixed w-full z-50 border-b border-red-900">
+    <nav className="fixed w-full z-50 bg-black/80 backdrop-blur-sm border-b border-red-900/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <Link to="/" className="flex-shrink-0">
-              <Drum className="h-8 w-8 text-red-600" />
-            </Link>
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-4">
-                {navItems.map(item => (
-                  <Link key={item.href} to={item.href} className={`${isActivePath(item.href)} hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium`}>
+            <Link to="/" className="text-red-600 font-bold text-xl">LAKOU VODOU</Link>
+            <div className="hidden md:block ml-10">
+              <div className="flex items-center space-x-4">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.href}
+                    to={item.href}
+                    className={`px-3 py-2 text-sm font-medium transition duration-300 ${
+                      location.pathname === item.href ? 'text-red-600' : 'text-gray-300 hover:text-white'
+                    }`}
+                  >
                     {item.label}
                   </Link>
                 ))}
               </div>
             </div>
           </div>
-          <div className="md:hidden">
+          <div className="flex items-center">
+            <button
+              onClick={() => setLanguage(language === 'en' ? 'fr' : 'en')}
+              className="px-3 py-1 text-sm text-gray-300 hover:text-white transition duration-300"
+            >
+              {language === 'en' ? 'FR' : 'EN'}
+            </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-red-900"
+              className="md:hidden ml-4 text-gray-300 hover:text-white"
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
-          </div>
-          <div className="hidden md:flex items-center ml-4">
-            <button
-              onClick={toggleLanguage}
-              className="flex items-center gap-2 px-3 py-2 rounded-lg bg-red-950/30 border border-red-900/50 hover:bg-red-950/50 transition-colors"
-            >
-              <Globe className="h-5 w-5 text-red-600" />
-              <span className="text-gray-300 uppercase text-sm font-medium">
-                {language === 'en' ? 'FR' : 'EN'}
-              </span>
+              <Menu className="h-6 w-6" />
             </button>
           </div>
         </div>
       </div>
-      {isOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {navItems.map(item => (
-              <Link key={item.href} to={item.href} className={`${isActivePath(item.href)} hover:text-red-500 block px-3 py-2 rounded-md text-base font-medium`}>
-                {item.label}
-              </Link>
-            ))}
-          </div>
+      <div className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}>
+        <div className="px-2 pt-2 pb-3 space-y-1 bg-black/90 backdrop-blur-sm border-t border-red-900/30">
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              to={item.href}
+              onClick={() => setIsOpen(false)}
+              className={`block px-3 py-2 text-base font-medium transition duration-300 ${
+                location.pathname === item.href ? 'text-red-600' : 'text-gray-300 hover:text-white'
+              }`}
+            >
+              {item.label}
+            </Link>
+          ))}
+          <button
+            onClick={() => {
+              setLanguage(language === 'en' ? 'fr' : 'en');
+              setIsOpen(false);
+            }}
+            className="w-full text-left px-3 py-2 text-base font-medium text-gray-300 hover:text-white transition duration-300"
+          >
+            {language === 'en' ? 'Français' : 'English'}
+          </button>
         </div>
-      )}
+      </div>
     </nav>
   );
 };
