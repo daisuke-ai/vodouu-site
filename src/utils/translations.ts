@@ -8,7 +8,7 @@ export const translations = {
     },
     home: {
       hero: {
-        title: "LAKOU VODOU",
+        title: "LAKOU HOÛTO",
         subtitle: "Travel to the heart of Haiti's spiritual heritage through our cultural education sanctuary.",
         exploreButton: "Explore Museum",
         supportButton: "Support Our Mission"
@@ -270,7 +270,7 @@ export const translations = {
     },
     home: {
       hero: {
-        title: "LAKOU VODOU",
+        title: "LAKOU HOÛTO",
         subtitle: "Voyagez au cœur du patrimoine spirituel d'Haïti à travers notre sanctuaire d'éducation culturel.",
         exploreButton: "Découvrir le musée",
         supportButton: "Soutenez notre mission"
