@@ -18,10 +18,10 @@ const Hero = () => {
       </div>
       <div className="relative h-full flex items-center justify-center">
         <div className="text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-5xl md:text-7xl font-bold text-red-600 mb-6">
+          <h1 className="text-5xl md:text-7xl font-bold text-black-500 mb-6">
             {t('hero.title')}
           </h1>
-          <p className="text-xl md:text-2xl text-gray-200 mb-8">
+          <p className="text-xl md:text-2xl text-black-300 mb-8">
             {t('hero.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

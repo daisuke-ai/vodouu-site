@@ -42,6 +42,10 @@ export const translations = {
             description: "We preserve our spiritual heritage through celebrations that honor our traditions."
           }
         }
+      },
+      artifacts: {
+        badge: "Sacred Collection",
+        title: "Explore Our Artifacts",
       }
     },
     footer: {
@@ -304,6 +308,10 @@ export const translations = {
             description: "Nous préservons notre héritage spirituel par des célébrations qui honorent nos traditions"
           }
         }
+      },
+      artifacts: {
+        badge: "Collection Sacrée",
+        title: "Explorez Nos Artefacts",
       }
     },
     footer: {

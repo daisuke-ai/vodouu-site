@@ -5,7 +5,7 @@ import { useLanguage } from '../../contexts/LanguageContext';
 const exhibits = [
   {
     key: 'drapo',
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSG36ugy5TlJfTouirkMKJH8X0rdx1yrIvxA&s",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2nAwWD_FfRQQtZSyphK29VFwHCrx8a-l1XHk6l3qyYap77q6xmjD1g0o8NfQY9Sxalsg",
     category: "Sacred Objects"
   },
   {
@@ -24,16 +24,16 @@ const ExhibitionPreview = () => {
   const { t } = useLanguage();
   
   return (
-    <section className="py-24 bg-gradient-to-b from-black to-red-950">
+    <section className="py-24 bg-white-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-red-600 uppercase tracking-wider text-sm font-semibold">
+          <span className="text-black-500 uppercase tracking-wider text-sm font-semibold">
             {t('exhibition.preview.badge')}
           </span>
-          <h2 className="text-4xl font-bold text-white mb-6">
+          <h2 className="text-4xl font-bold text-black-700 mb-6">
             {t('exhibition.preview.title')}
           </h2>
-          <p className="text-gray-300">
+          <p className="text-black-500">
             {t('exhibition.preview.description')}
           </p>
         </div>
@@ -49,7 +49,7 @@ const ExhibitionPreview = () => {
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90 group-hover:opacity-75 transition duration-300"></div>
               <div className="absolute bottom-0 left-0 right-0 p-6">
-                <span className="inline-block px-3 py-1 bg-red-600/20 text-red-400 text-sm rounded-full mb-3">
+                <span className="inline-block px-3 py-1 bg-black-600/20 text-black-1000 text-sm rounded-full mb-3">
                   {t(`exhibition.exhibits.${exhibit.key}.category`)}
                 </span>
                 <h3 className="text-2xl font-bold text-white mb-2">
@@ -58,7 +58,7 @@ const ExhibitionPreview = () => {
                 <p className="text-gray-300 mb-4">
                   {t(`exhibition.exhibits.${exhibit.key}.description`)}
                 </p>
-                <button className="flex items-center text-red-500 hover:text-red-400 transition duration-300">
+                <button className="flex items-center text-black-1000 hover:text-black-1000 transition duration-300">
                   {t('exhibition.exhibits.viewDetails')}
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </button>

@@ -13,7 +13,7 @@ function App() {
   return (
     <LanguageProvider>
       <Router>
-        <div className="min-h-screen bg-black text-gray-100">
+        <div className="min-h-screen bg-white-100 text-black-500">
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />

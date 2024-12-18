@@ -31,8 +31,8 @@ const Shop = () => {
         
         <div className="relative w-full py-24">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="inline-flex items-center justify-center w-20 h-20 mb-8 rounded-full bg-red-950/50 border border-red-600">
-              <ShoppingBag className="h-10 w-10 text-red-600" />
+            <div className="inline-flex items-center justify-center w-20 h-20 mb-8 rounded-full bg-black-200 border border-black-500">
+              <ShoppingBag className="h-10 w-10 text-black-500" />
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
@@ -44,9 +44,9 @@ const Shop = () => {
             </p>
             
             <div className="relative max-w-md mx-auto mb-12">
-              <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-red-900 rounded-lg blur opacity-25"></div>
-              <div className="relative bg-black/50 backdrop-blur-sm p-8 rounded-lg border border-red-900/50">
-                <div className="flex items-center gap-3 mb-4 text-red-500">
+              <div className="absolute -inset-1 bg-gradient-to-r from-black-500 to-black-700 rounded-lg blur opacity-25"></div>
+              <div className="relative bg-black/50 backdrop-blur-sm p-8 rounded-lg border border-black-500">
+                <div className="flex items-center gap-3 mb-4 text-black-500">
                   <Bell className="h-5 w-5" />
                   <span className="font-semibold">{t('shop.hero.notification.title')}</span>
                 </div>
@@ -56,7 +56,7 @@ const Shop = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder={t('shop.hero.notification.placeholder')}
-                    className="w-full px-4 py-3 bg-black/50 border border-red-900/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-red-600 transition duration-300"
+                    className="w-full px-4 py-3 bg-black/50 border border-black-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-black-600 transition duration-300"
                     required
                   />
                   <button 
@@ -74,12 +74,12 @@ const Shop = () => {
               {categories.map((item, index) => (
                 <div 
                   key={index}
-                  className="bg-red-950/20 border border-red-900/30 p-6 rounded-lg"
+                  className="bg-black-200 border border-black-500 p-6 rounded-lg"
                 >
-                  <h3 className="text-lg font-semibold text-red-500 mb-2">
+                  <h3 className="text-lg font-semibold text-black-500 mb-2">
                     {t(`shop.categories.${item.key}.title`)}
                   </h3>
-                  <p className="text-gray-400 text-sm">
+                  <p className="text-black-300 text-sm">
                     {t(`shop.categories.${item.key}.description`)}
                   </p>
                 </div>

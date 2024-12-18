@@ -8,17 +8,17 @@
   }
   
   body {
-    @apply bg-black text-gray-100;
+    @apply bg-white-100 text-black-500;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-red-700 text-white px-8 py-4 rounded-lg hover:bg-red-800 transition duration-300 text-lg font-semibold;
+    @apply bg-black-500 text-white-100 px-8 py-4 rounded-lg hover:bg-black-400 transition duration-300 text-lg font-semibold;
   }
   
   .btn-secondary {
-    @apply border-2 border-red-700 text-white px-8 py-4 rounded-lg hover:bg-red-700/20 transition duration-300 text-lg font-semibold;
+    @apply border-2 border-black-500 text-black-500 px-8 py-4 rounded-lg hover:bg-black-100/20 transition duration-300 text-lg font-semibold;
   }
 }
 

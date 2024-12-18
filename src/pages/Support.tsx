@@ -37,8 +37,8 @@ const Support = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
               <div className="flex items-center gap-2 mb-6">
-                <Heart className="h-6 w-6 text-red-600" />
-                <span className="text-red-600 uppercase tracking-wider text-sm font-semibold">
+                <Heart className="h-6 w-6 text-black-600" />
+                <span className="text-black-600 uppercase tracking-wider text-sm font-semibold">
                   {t('support.hero.badge')}
                 </span>
               </div>
@@ -71,8 +71,8 @@ const Support = () => {
                       onClick={() => setSelectedAmount(amount)}
                       className={`p-4 rounded-lg border ${
                         selectedAmount === amount
-                          ? 'border-red-600 bg-red-950/50 text-white'
-                          : 'border-red-900/30 text-gray-400 hover:border-red-600 hover:bg-red-950/30'
+                          ? 'border-black-600 bg-black-950/50 text-white'
+                          : 'border-black-900/30 text-gray-400 hover:border-black-600 hover:bg-black-950/30'
                       } transition duration-300`}
                     >
                       ${amount}
@@ -89,7 +89,7 @@ const Support = () => {
                       setCustomAmount(e.target.value);
                       setSelectedAmount('custom');
                     }}
-                    className="w-full px-4 py-3 bg-black border border-red-900/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-red-600 transition duration-300"
+                    className="w-full px-4 py-3 bg-black border border-black-900/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-black-600 transition duration-300"
                   />
                 </div>
 
@@ -114,16 +114,16 @@ const Support = () => {
               <div className="grid gap-6">
                 {supportCategories.map((category) => (
                   <div key={category.key} className="relative group">
-                    <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-red-900 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
-                    <div className="relative bg-black p-6 rounded-lg border border-red-900/30">
-                      <category.icon className="h-8 w-8 text-red-600 mb-4" />
+                    <div className="absolute -inset-1 bg-gradient-to-r from-black-600 to-black-900 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
+                    <div className="relative bg-black p-6 rounded-lg border border-black-900/30">
+                      <category.icon className="h-8 w-8 text-black-600 mb-4" />
                       <h3 className="text-xl font-bold text-white mb-2">
                         {t(`support.categories.${category.key}.title`)}
                       </h3>
                       <p className="text-gray-400 mb-4">
                         {t(`support.categories.${category.key}.description`)}
                       </p>
-                      <div className="flex items-center gap-2 text-red-500">
+                      <div className="flex items-center gap-2 text-black-500">
                         <Check className="h-5 w-5" />
                         <span>{t(`support.categories.${category.key}.impact`)}</span>
                       </div>
@@ -137,17 +137,17 @@ const Support = () => {
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-24 bg-gradient-to-b from-black to-red-950">
+      <section className="py-24 bg-white-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative">
-            <div className="absolute -inset-4 bg-gradient-to-r from-red-600 via-red-900 to-red-600 rounded-3xl blur opacity-25 animate-gradient-x"></div>
-            <div className="relative bg-black/50 backdrop-blur-sm rounded-2xl p-12">
+            <div className="absolute -inset-4 bg-gradient-to-r from-black-200 via-black-300 to-black-200 rounded-3xl blur opacity-25 animate-gradient-x"></div>
+            <div className="relative bg-white-200 backdrop-blur-sm rounded-2xl p-12">
               <div className="max-w-2xl mx-auto text-center">
-                <Mail className="h-12 w-12 text-red-600 mx-auto mb-6" />
-                <h2 className="text-3xl font-bold text-white mb-4">
+                <Mail className="h-12 w-12 text-black-500 mx-auto mb-6" />
+                <h2 className="text-3xl font-bold text-black-500 mb-4">
                   {t('support.newsletter.title')}
                 </h2>
-                <p className="text-gray-300 mb-8">
+                <p className="text-black-300 mb-8">
                   {t('support.newsletter.description')}
                 </p>
                 <form className="flex gap-4">
@@ -156,7 +156,7 @@ const Support = () => {
                     placeholder={t('support.newsletter.placeholder')}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="flex-1 px-4 py-3 bg-black/50 border border-red-900/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-red-600 transition duration-300"
+                    className="flex-1 px-4 py-3 bg-white-100 border border-black-200 rounded-lg text-black-500 placeholder-black-300 focus:outline-none focus:border-black-400 transition duration-300"
                   />
                   <button
                     type="submit"

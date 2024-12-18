@@ -26,7 +26,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <h2 className="text-2xl font-bold text-red-600">LAKOU VODOU</h2>
+            <h2 className="text-2xl font-bold text-red-600">LAKOU HOÛTO</h2>
           </div>
           
           <div>
@@ -48,12 +48,12 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-white font-semibold mb-4">
+            <h3 className="text-black-500 font-semibold mb-4">
               {t('footer.programs.title')}
             </h3>
             <ul className="space-y-2">
               {programs.map((program) => (
-                <li key={program.name} className="text-gray-400">
+                <li key={program.name} className="text-black-300">
                   {program.name}
                 </li>
               ))}
