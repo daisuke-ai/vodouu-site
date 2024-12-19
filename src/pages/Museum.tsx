@@ -1,8 +1,8 @@
 import React from 'react';
 import { ScrollText, Camera, Book, Users, ArrowRight, Calendar } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import image13 from '/images/13.jpg'
-import image14 from '/images/14.jpg'
+import image13 from '/assets/images/13.jpg'
+import image14 from '/assets/images/14.jpg'
 
 /*production build */
 
