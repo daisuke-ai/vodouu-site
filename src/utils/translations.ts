@@ -81,8 +81,6 @@ export const translations = {
         description: "Discover our most significant artifacts and sacred objects, each telling a unique story of Vodou heritage",
         imageAlt: "Featured Exhibition Display",
         badge: "Mobile & Virtual Access",
-        title: "Experience Vodou Heritage Anywhere",
-        description: "The idea of a mobile exhibition is particularly relevant to bring our intangible heritage to an audience unaware of its contribution to human freedom. Stay connected with us to obtain our annual exhibition calendar, in museums and universities near you.",
         features: {
           virtualTours: {
             title: "Virtual Tours",
