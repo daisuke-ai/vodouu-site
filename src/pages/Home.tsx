@@ -22,15 +22,14 @@ const Home = () => {
   return (
     <main className="min-h-screen">
       {/* Hero Section with Advanced Parallax */}
-      <section className="relative h-screen overflow-hidden bg-white-100">
+      <section className="relative h-screen overflow-hidden bg-gradient-to-b from-white-100 to-white-200">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-fixed"
+          className="absolute inset-0 bg-gradient-to-b from-white-100 via-white-200 to-white-300"
           style={{
-            backgroundImage: `url(/images/12.jpg)`,
             transform: `translateY(${scrollY * 0.5}px)`,
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-black/3 to-black/5"></div>
         </div>
         <div className="relative h-full flex items-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-20 lg:px-8 w-full">
@@ -45,7 +44,7 @@ const Home = () => {
                 </span>
               </h1>
               <div className="bg-white/50 p-4 rounded-lg inline-block">
-                <p className="text-2xl md:text-3xl font-semibold text-white-500 mt-8 mb-10 max-w-2xl leading-relaxed shadow-lg">
+                <p className="text-2xl md:text-3xl font-semibold text-black-500 mt-8 mb-10 max-w-2xl leading-relaxed shadow-lg">
                   Travel to the heart of Haiti's spiritual heritage through our cultural education sanctuary.
                 </p>
               </div>

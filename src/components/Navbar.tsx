@@ -25,11 +25,11 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed w-full z-50 bg-black/80 backdrop-blur-sm border-b border-red-900/30">
+    <nav className="fixed w-full z-50 bg-white-100/80 backdrop-blur-sm border-b border-black-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <Link to="/" className="text-red-600 font-bold text-xl">
+            <Link to="/" className="text-black-500 font-bold text-xl">
               LAKOU HOÛTO
             </Link>
             <div className="hidden md:block ml-10">
@@ -39,7 +39,7 @@ const Navbar = () => {
                     key={item.href}
                     to={item.href}
                     className={`px-3 py-2 text-sm font-medium transition duration-300 ${
-                      location.pathname === item.href ? 'text-red-600' : 'text-gray-300 hover:text-white'
+                      location.pathname === item.href ? 'text-red-600' : 'text-black-500 hover:text-black-400'
                     }`}
                   >
                     {item.label}
@@ -51,13 +51,13 @@ const Navbar = () => {
           <div className="flex items-center">
             <button
               onClick={() => setLanguage(language === 'en' ? 'fr' : 'en')}
-              className="px-3 py-1 text-sm text-gray-300 hover:text-white transition duration-300"
+              className="px-3 py-1 text-sm text-black-500 hover:text-black-400 transition duration-300"
             >
               {language === 'en' ? 'FR' : 'EN'}
             </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden ml-4 text-gray-300 hover:text-white"
+              className="md:hidden ml-4 text-black-500 hover:text-black-400"
             >
               <Menu className="h-6 w-6" />
             </button>
@@ -65,14 +65,14 @@ const Navbar = () => {
         </div>
       </div>
       <div className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}>
-        <div className="px-2 pt-2 pb-3 space-y-1 bg-black/90 backdrop-blur-sm border-t border-red-900/30">
+        <div className="px-2 pt-2 pb-3 space-y-1 bg-white-100/90 backdrop-blur-sm border-t border-black-200">
           {navItems.map((item) => (
             <Link
               key={item.href}
               to={item.href}
               onClick={() => setIsOpen(false)}
               className={`block px-3 py-2 text-base font-medium transition duration-300 ${
-                location.pathname === item.href ? 'text-red-600' : 'text-gray-300 hover:text-white'
+                location.pathname === item.href ? 'text-red-600' : 'text-black-500 hover:text-black-400'
               }`}
             >
               {item.label}
@@ -83,7 +83,7 @@ const Navbar = () => {
               setLanguage(language === 'en' ? 'fr' : 'en');
               setIsOpen(false);
             }}
-            className="w-full text-left px-3 py-2 text-base font-medium text-gray-300 hover:text-white transition duration-300"
+            className="w-full text-left px-3 py-2 text-base font-medium text-black-500 hover:text-black-400 transition duration-300"
           >
             {language === 'en' ? 'Français' : 'English'}
           </button>
