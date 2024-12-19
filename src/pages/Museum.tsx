@@ -4,6 +4,8 @@ import { useLanguage } from '../contexts/LanguageContext';
 import image13 from '/images/13.jpg'
 import image14 from '/images/14.jpg'
 
+/*production build */
+
 const Museum = () => {
   const { t } = useLanguage();
   
