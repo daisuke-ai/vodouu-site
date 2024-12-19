@@ -3,7 +3,6 @@ import { ArrowRight, Star, Calendar, Users, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import ArtifactsCarousel from '../components/home/ArtifactsCarousel';
-import image12 from '/images/12.jpg'
 import image3 from '/images/3.jpg'
 
 
@@ -27,7 +26,7 @@ const Home = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{
-            backgroundImage: `url(${image12})`,
+            backgroundImage: `url(/images/12.jpg)`,
             transform: `translateY(${scrollY * 0.5}px)`,
           }}
         >
