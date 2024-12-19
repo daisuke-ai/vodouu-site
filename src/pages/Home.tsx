@@ -3,7 +3,7 @@ import { ArrowRight, Star, Calendar, Users, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import ArtifactsCarousel from '../components/home/ArtifactsCarousel';
-import image3 from '/images/3.jpg'
+import image3 from '/images/3.jpg';
 
 
 const Home = () => {
