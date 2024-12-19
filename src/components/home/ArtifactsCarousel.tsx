@@ -3,16 +3,16 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 
 // Import images
-import image1 from '../../Public/images/1.jpg';
-import image2 from '../../Public/images/2.jpg';
-import image4 from '../../Public/images/4.jpg';
-import image5 from '../../Public/images/5.jpg';
-import image6 from '../../Public/images/6.jpg';
-import image7 from '../../Public/images/7.jpg';
-import image8 from '../../Public/images/8.jpg';
-import image9 from '../../Public/images/9.jpg';
-import image10 from '../../Public/images/10.jpg';
-import image11 from '../../Public/images/11.jpg';
+import image1 from '/images/1.jpg';
+import image2 from '/images/2.jpg';
+import image4 from '/images/4.jpg';
+import image5 from '/images/5.jpg';
+import image6 from '/images/6.jpg';
+import image7 from '/images/7.jpg';
+import image8 from '/images/8.jpg';
+import image9 from '/images/9.jpg';
+import image10 from '/images/10.jpg';
+import image11 from '/images/11.jpg';
 
 const artifacts = [
   { id: 1, image: image1 },

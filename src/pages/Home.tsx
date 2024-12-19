@@ -3,8 +3,8 @@ import { ArrowRight, Star, Calendar, Users, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import ArtifactsCarousel from '../components/home/ArtifactsCarousel';
-import image12 from '../public/images/12.jpg'
-import image3 from '../public/images/3.jpg'
+import image12 from '/images/12.jpg'
+import image3 from '/images/3.jpg'
 
 
 const Home = () => {
