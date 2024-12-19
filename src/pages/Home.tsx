@@ -3,6 +3,8 @@ import { ArrowRight, Star, Calendar, Users, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import ArtifactsCarousel from '../components/home/ArtifactsCarousel';
+import image12 from '../public/images/12.jpg'
+import image3 from '../public/images/12.jpg'
 
 const Home = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -24,7 +26,7 @@ const Home = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{
-            backgroundImage: 'url("https://cdn.thecollector.com/wp-content/uploads/2022/01/frantz-damballah-tresor-death-lwa-famille-prefette-painting.jpg")',
+            backgroundImage: `url(${image12})`,
             transform: `translateY(${scrollY * 0.5}px)`,
           }}
         >
@@ -57,10 +59,10 @@ const Home = () => {
                 </button>
                 <button 
                   onClick={() => navigate('/support')}
-                  className="group btn-secondary flex items-center justify-center"
+                  className="group bg-black-500 hover:bg-black-400 text-white-100 border-2 border-black-500 px-8 py-3 rounded-lg transition duration-300 flex items-center justify-center"
                 >
                   {t('home.hero.supportButton')}
-                  <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform text-white-100" />
                 </button>
               </div>
             </div>
@@ -161,7 +163,7 @@ const Home = () => {
               },
               {
                 key: 'research',
-                image: "https://vamzzz.com/blog/wp-content/uploads/2021/02/vevers-asson.jpg",
+                image: image3,
                 icon: Star
               }
             ].map((program) => (

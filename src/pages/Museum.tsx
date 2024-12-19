@@ -1,6 +1,8 @@
 import React from 'react';
 import { ScrollText, Camera, Book, Users, ArrowRight, Calendar } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import image13 from '../public/images/13.jpg'
+import image14 from '../public/images/14.jpg'
 
 const Museum = () => {
   const { t } = useLanguage();
@@ -20,7 +22,7 @@ const Museum = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'url("https://rustytraveltrunk.com/wp-content/uploads/2017/08/Voodoo-Museum-4.jpg")',
+            backgroundImage: `url(${image13})`,
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black"></div>
@@ -74,7 +76,7 @@ const Museum = () => {
             <div className="relative group">
               <div className="absolute -inset-4 bg-gradient-to-r from-red-600 to-red-900 rounded-xl blur opacity-25 group-hover:opacity-75 transition duration-300"></div>
               <img 
-                src="https://rustytraveltrunk.com/wp-content/uploads/2017/08/Voodoo-Museum-header.jpg"
+                src={image14}
                 alt="Museum interior"
                 className="relative rounded-lg shadow-2xl"
               />
